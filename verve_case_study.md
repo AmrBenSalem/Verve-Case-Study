@@ -27,7 +27,7 @@
 #### Extracting the name of the person from the device name and checking whether the name belongs to a male or a female : 
 
 - Using the nltk library for example, we can extract the name of the person from the `device_name` feature.
-- Using either a library (gender-guesser for example) or a classification model trained on names and genders, we can create another feature where we put whether we think that the gender is male or female (based on the name) or unknown (if the `device_name` is missing)
+- Using either a library (gender-guesser for example) or a classification model trained on names and genders, we can create another feature where we put the guess of the gender (based on the name) or unknown (if the `device_name` is missing)
 
 #### Mean, min, max, std encoding (with respect to the gender) of the interaction with app :
 
@@ -38,18 +38,19 @@
 - Creating an **ordinal** feature containing bins created from the discretization of the `interaction_with_app` feature.
 - Bins can be for example : Short - Medium - Long ( or 0 - 1 - 2 )
 
-#### Merging Ad categories that fall in the same "bigger" category : 
+#### Merging Ad categories that fall in a same "bigger" category : 
 
 - Depending on the data (gender proportion for each category), we can merge categories in order to reduce the number of classes in the `ad_category` feature and increase the number of samples per class. 
 - For example : merging Mid-range cars with luxury cars / merging Jewelry with Beauty
 
-#### Merging App categories that fall in the same "bigger" category : 
+#### Merging App categories that fall in a same "bigger" category : 
 
 - Same reason and logic with previous statement.
 
 #### Creating a feature that contain the information on both the app category and the ad category :
 
 - Concatenating the `app_category` and the `ad_category` into a single feature.
+- This may or may not be useful as it can create multiple classes.
 
 #### Extracting the type of device from the device name : 
 
@@ -70,7 +71,7 @@
 
 #### Aggregating the whole dataset to make sure we have a unique user per row :
 
-- When aggregating, categorical and ordinal features values can either be just copied (because they were the same for all rows for the same user) or picked based on the most frequent class (or they can be listed, for example all the `app_categories` that the user used, but this would create many classes within the feature, or many features).
+- When aggregating, categorical and ordinal features values can either be just copied (because they were the same for all rows for the same user) or picked based on the most frequent class (or they can be listed, for example all the `app_categories` that the user used, but this would create many classes within the feature, or many features in the case of one-hot encoding).
 - Continuous features may also be copied for the same previous reason, or averaged.
 
 #### Clustering feature : 
