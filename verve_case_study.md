@@ -13,12 +13,12 @@
 
 #### The unbalance between classes in the features : 
 
-- The most noticeable unbalance is in the `Click` feature (~0.4% Yes to ~99.5% No)
+- The most noticeable unbalance is in the `Click` feature (~0.4% Yes to ~99.5% No).
 - `app_category` and `ad_category` also have high frequency classes and low frequency classes.
 
 #### Low number of rows after aggregation : 
 
-- After grouping by the `user_id` feature, data may end up having a small number of rows
+- After grouping by the `user_id` feature, data may end up having a small number of rows.
 
 ## 2 - Interesting features : 
 
@@ -27,7 +27,7 @@
 #### Extracting the name of the person from the device name and checking whether the name belongs to a male or a female : 
 
 - Using the nltk library for example, we can extract the name of the person from the `device_name` feature.
-- Using either a library (gender-guesser for example) or a classification model trained on names and genders, we can create another feature where we put the guess of the gender (based on the name) or unknown (if the `device_name` is missing)
+- Using either a library (gender-guesser for example) or a classification model trained on names and genders, we can create another feature where we put the guess of the gender (based on the name) or unknown (if the `device_name` is missing).
 
 #### Mean, min, max, std encoding (with respect to the gender) of the interaction with app :
 
@@ -41,7 +41,7 @@
 #### Merging Ad categories that fall in a same "bigger" category : 
 
 - Depending on the data (gender proportion for each category), we can merge categories in order to reduce the number of classes in the `ad_category` feature and increase the number of samples per class. 
-- For example : merging Mid-range cars with luxury cars / merging Jewelry with Beauty
+- For example : merging Mid-range cars with luxury cars / merging Jewelry with Beauty.
 
 #### Merging App categories that fall in a same "bigger" category : 
 
